@@ -28,7 +28,7 @@ public class ContaTerminal {
     }
 
     public void setNomeCliente(String nc){
-        this.nomeCliente = nc;
+        this.nomeCliente = nc.toUpperCase();
     }
 
     public double getSaldo(){
@@ -40,6 +40,6 @@ public class ContaTerminal {
     }
 
    public String darBoasVindas(){
-    return "Olá " + this.nomeCliente + ", obrigado por criar uma conta em nosso banco, sua agencia é " + this.agencia + ", conta " + this.numero + " já está disponível para saque.";
+    return "Ola " + this.nomeCliente + ", obrigado por criar uma conta em nosso banco, sua agencia e " + this.agencia + ", conta " + this.numero + " e seu saldo R$" + this.saldo + " ja esta disponivel para saque.";
    }
 }
