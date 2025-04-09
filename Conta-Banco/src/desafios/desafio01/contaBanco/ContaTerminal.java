@@ -1,5 +1,7 @@
 package desafios.desafio01.contaBanco;
 
+import java.util.Random;
+
 public class ContaTerminal {
     private int numero;
     private String agencia;
@@ -13,7 +15,17 @@ public class ContaTerminal {
     }
 
     public void setNumero(int n){
-        this.numero = n;
+
+            Random numAleatorio = new Random();
+            if(n > 0){
+                this.numero = n;
+            }else{
+                this.numero = numAleatorio.nextInt(6000) * 1;
+            }
+        
+
+    
+        
     }
     public String getAgencia(){
         return this.agencia;
@@ -27,8 +39,8 @@ public class ContaTerminal {
         return this.nomeCliente;
     }
 
-    public void setNomeCliente(String nc){
-        this.nomeCliente = nc.toUpperCase();
+    public void setNomeCliente(String nome, String sobrenome){
+        this.nomeCliente = nome.concat(" ").concat(sobrenome).toUpperCase();
     }
 
     public double getSaldo(){
@@ -36,7 +48,12 @@ public class ContaTerminal {
     }
 
     public void setSaldo(double s){
-        this.saldo = s;
+        if(s >= 0){
+            this.saldo = s;
+        }else{
+            this.saldo = 0;
+        }
+        
     }
 
    public String darBoasVindas(){
